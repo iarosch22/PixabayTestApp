@@ -9,7 +9,7 @@ interface PixabayApiService {
     @GET("/api/videos/")
     suspend fun getVideos(
         @Query("key") key: String = "48935024-a91641626c0ca8e95d52b8637",
-        @Query("order") order: String,
+        @Query("order") order: String = "latest",
         @Query("page") page: Int,
         @Query("per_page") perPage: Int,
     ): PixabayResponse
