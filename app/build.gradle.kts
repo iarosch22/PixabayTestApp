@@ -49,6 +49,7 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
 
     implementation(libs.retrofit)
+    implementation(libs.squareup.converter.gson)
 
     implementation(libs.hilt.android)
     kapt(libs.hilt.android.compiler)

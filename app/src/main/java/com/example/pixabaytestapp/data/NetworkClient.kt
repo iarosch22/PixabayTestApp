@@ -1,10 +1,10 @@
 package com.example.pixabaytestapp.data
 
-import com.example.pixabaytestapp.data.dto.PixabayResponse
-import retrofit2.Response
+import com.example.pixabaytestapp.data.dto.BaseRequest
+import com.example.pixabaytestapp.data.dto.Response
 
-interface NetworkClient<T> {
+interface NetworkClient {
 
-    suspend fun doRequest(dto: T): Response<PixabayResponse>
+    suspend fun doRequest(dto: BaseRequest): Response
 
 }

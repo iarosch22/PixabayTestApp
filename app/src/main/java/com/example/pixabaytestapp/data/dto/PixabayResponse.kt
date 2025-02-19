@@ -4,7 +4,7 @@ data class PixabayResponse(
     val hits: List<Hit>,
     val total: Int,
     val totalHits: Int
-)
+): Response()
 
 data class Hit(
     val duration: Int,
