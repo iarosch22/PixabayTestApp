@@ -9,7 +9,7 @@ data class PixabayResponse(
 data class Hit(
     val duration: Int,
     val id: Int,
-    val pageURL: String,
+    val tags: String,
     val videos: Videos,
 )
 
@@ -22,7 +22,6 @@ data class Videos(
 
 data class Large(
     val height: Int,
-    val size: Int,
     val thumbnail: String,
     val url: String,
     val width: Int
@@ -30,7 +29,6 @@ data class Large(
 
 data class Medium(
     val height: Int,
-    val size: Int,
     val thumbnail: String,
     val url: String,
     val width: Int
@@ -38,7 +36,6 @@ data class Medium(
 
 data class Small(
     val height: Int,
-    val size: Int,
     val thumbnail: String,
     val url: String,
     val width: Int
@@ -46,7 +43,6 @@ data class Small(
 
 data class Tiny(
     val height: Int,
-    val size: Int,
     val thumbnail: String,
     val url: String,
     val width: Int
