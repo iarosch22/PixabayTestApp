@@ -9,6 +9,10 @@ android {
     namespace = "com.example.pixabaytestapp"
     compileSdk = 35
 
+    buildFeatures {
+        viewBinding = true
+    }
+
     defaultConfig {
         applicationId = "com.example.pixabaytestapp"
         minSdk = 29
@@ -69,6 +73,9 @@ dependencies {
     implementation(libs.androidx.media3.ui)
 
     implementation(libs.androidx.fragment.ktx)
+
+    implementation(libs.androidx.navigation.fragment.ktx)
+    implementation(libs.androidx.navigation.ui.ktx)
 
 }
 
