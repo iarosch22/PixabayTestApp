@@ -2,13 +2,10 @@ package com.example.pixabaytestapp.data.network
 
 import com.example.pixabaytestapp.data.NetworkClient
 import com.example.pixabaytestapp.data.converters.VideoResponseConverter
-import com.example.pixabaytestapp.data.dto.Large
 import com.example.pixabaytestapp.data.dto.PixabayRequest
 import com.example.pixabaytestapp.data.dto.PixabayResponse
 import com.example.pixabaytestapp.domain.PixabayRepository
 import com.example.pixabaytestapp.domain.models.SearchResultsEntity
-import com.example.pixabaytestapp.domain.models.VideoEntity
-import com.example.pixabaytestapp.domain.models.VideoFormat
 import com.example.pixabaytestapp.utils.ErrorType
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
