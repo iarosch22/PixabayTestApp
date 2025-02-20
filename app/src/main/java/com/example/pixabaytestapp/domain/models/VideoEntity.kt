@@ -4,7 +4,6 @@ data class VideoEntity(
     val duration: Int,
     val id: Int,
     val thumbnail: String,
-    val url: String,
     val large: VideoFormat,
     val medium: VideoFormat,
     val small: VideoFormat,
