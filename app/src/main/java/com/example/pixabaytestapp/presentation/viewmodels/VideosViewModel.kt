@@ -22,7 +22,7 @@ class VideosViewModel @Inject constructor(private val pixabayInteractor: Pixabay
         getVideos()
     }
 
-    private fun getVideos() {
+    fun getVideos() {
         viewModelScope.launch(Dispatchers.IO) {
             try {
                 pixabayInteractor
@@ -43,6 +43,7 @@ class VideosViewModel @Inject constructor(private val pixabayInteractor: Pixabay
 
         when {
             errorType != null -> renderState(VideosState.Error(errorType))
+            videos.isEmpty() -> renderState(VideosState.Error(ErrorType.DATABASE_ERROR))
             else -> renderState(VideosState.Content(videos = videos))
         }
     }

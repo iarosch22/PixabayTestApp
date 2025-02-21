@@ -7,12 +7,14 @@
     android:layout_width="match_parent"
     android:layout_height="61dp"
     android:gravity="center_vertical"
-    android:orientation="horizontal" >
+    android:orientation="horizontal"
+    android:layout_marginVertical="@dimen/layout_size_8">
 
     <ImageView
-        android:id="@+id/ivTrackArtwork"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
+        android:id="@+id/ivPreview"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:scaleType="centerCrop"
         android:layout_marginEnd="@dimen/layout_size_16"
         android:src="@drawable/ic_placeholder"/>
 
@@ -27,7 +29,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:text="flowers, yellow, blossom"
-            android:textColor="@color/black"
+            android:textColor="@color/blue"
             android:textStyle="bold"
             android:textSize="@dimen/text_size_14"
             android:ellipsize="end"

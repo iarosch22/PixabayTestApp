@@ -28,6 +28,18 @@
         android:layout_marginTop="@dimen/layout_size_16"
         android:indeterminateTint="@color/black"/>
 
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/tvErrorMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/layout_size_16"
+        android:textStyle="bold"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="@string/app_error_network" />
+
     <LinearLayout
         android:id="@+id/videoList"
         android:layout_width="match_parent"

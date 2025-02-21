@@ -18,6 +18,8 @@ class VideoResponseConverter @Inject constructor() {
                     duration = it.duration,
                     id = it.id,
                     thumbnail = it.videos.tiny.thumbnail,
+                    type = it.type,
+                    tags = it.tags,
                     large = videoLargeConverter(it.videos.large),
                     medium = videoMediumConverter(it.videos.medium),
                     small = videoSmallConverter(it.videos.small),

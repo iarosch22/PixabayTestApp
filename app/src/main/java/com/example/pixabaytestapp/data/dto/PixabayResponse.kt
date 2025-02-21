@@ -9,6 +9,7 @@ data class PixabayResponse(
 data class Hit(
     val duration: Int,
     val id: Int,
+    val type: String,
     val tags: String,
     val videos: Videos,
 )
