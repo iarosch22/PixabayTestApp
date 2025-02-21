@@ -7,10 +7,16 @@ import com.example.pixabaytestapp.data.NetworkClient
 import com.example.pixabaytestapp.data.dto.BaseRequest
 import com.example.pixabaytestapp.data.dto.PixabayRequest
 import com.example.pixabaytestapp.data.dto.Response
+import dagger.hilt.android.qualifiers.ApplicationContext
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import javax.inject.Inject
+import javax.inject.Singleton
 
-class PixabayNetworkClient(private val context: Context): NetworkClient {
+@Singleton
+class PixabayNetworkClient @Inject constructor(
+    @ApplicationContext private val context: Context
+): NetworkClient {
 
     private val pixabayBaseUrl = "https://pixabay.com"
 

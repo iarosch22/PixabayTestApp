@@ -9,8 +9,11 @@ import com.example.pixabaytestapp.domain.models.SearchResultsEntity
 import com.example.pixabaytestapp.utils.ErrorType
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
+import javax.inject.Inject
+import javax.inject.Singleton
 
-class PixabayRepositoryImpl(
+@Singleton
+class PixabayRepositoryImpl @Inject constructor(
     private val networkClient: NetworkClient,
     private val videoResponseConverter: VideoResponseConverter
 ): PixabayRepository {

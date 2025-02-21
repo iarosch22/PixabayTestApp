@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/videosFragment"
-        android:name="com.example.pixabaytestapp.ui.VideosFragment"
+        android:name="com.example.pixabaytestapp.presentation.ui.VideosFragment"
         android:label="fragment_videos"
         tools:layout="@layout/fragment_videos" />
 </navigation>

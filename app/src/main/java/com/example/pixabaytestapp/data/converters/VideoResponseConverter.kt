@@ -7,8 +7,9 @@ import com.example.pixabaytestapp.data.dto.Small
 import com.example.pixabaytestapp.data.dto.Tiny
 import com.example.pixabaytestapp.domain.models.VideoEntity
 import com.example.pixabaytestapp.domain.models.VideoFormat
+import javax.inject.Inject
 
-class VideoResponseConverter {
+class VideoResponseConverter @Inject constructor() {
 
     fun convert(response: PixabayResponse): List<VideoEntity> {
         return with(response) {
