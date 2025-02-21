@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">PixabayTestApp</string>
+    <string name="app_title">Последние видео</string>
 </resources>

@@ -26,6 +26,17 @@ class VideoResponseConverter {
         }
     }
 
+//    private fun <T> videoConverter(video: T): VideoFormat {
+//        return with(video) {
+//            VideoFormat(
+//                height = TODO(),
+//                thumbnail = TODO(),
+//                url = TODO(),
+//                width = TODO()
+//            )
+//        }
+//    }
+
     private fun videoLargeConverter(large: Large): VideoFormat {
         return with(large) {
             VideoFormat(
