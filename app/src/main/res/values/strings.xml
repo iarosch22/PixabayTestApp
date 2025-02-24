@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">PixabayTestApp</string>
+    <string name="app_title">Последние видео</string>
+    <string name="app_error_network">Проверьте подключение к интернету!</string>
+    <string name="app_error_database">Видео отсутствуют:(</string>
+    <string name="app_error_request">Неверный запрос</string>
+    <string name="app_error_unknown">Неизвестная ошибка:(</string>
 </resources>
