@@ -21,7 +21,7 @@ class VideosViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
     private val tvDuration: TextView = itemView.findViewById(R.id.tvDuration)
 
     fun bind(item: VideoEntity) {
-        tvDuration.text = SimpleDateFormat("mm:ss", Locale.getDefault()).format(item.duration * 1000)
+        tvDuration.text = SimpleDateFormat("mm:ss", Locale.getDefault()).format(item.duration)
         tvTags.text = item.tags
         tvTypeOfVideo.text = item.type
         loadTrackArtwork(item.thumbnail)

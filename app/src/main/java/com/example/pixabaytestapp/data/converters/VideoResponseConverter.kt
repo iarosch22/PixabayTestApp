@@ -15,7 +15,7 @@ class VideoResponseConverter @Inject constructor() {
         return with(response) {
             hits.map {
                 VideoEntity(
-                    duration = it.duration,
+                    duration = it.duration * 1000,
                     id = it.id,
                     thumbnail = it.videos.tiny.thumbnail,
                     type = it.type,

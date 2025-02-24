@@ -5,8 +5,9 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.pixabaytestapp.R
 import com.example.pixabaytestapp.domain.models.VideoEntity
+import com.example.pixabaytestapp.presentation.OnVideoClickListener
 
-class VideosAdapter: RecyclerView.Adapter<VideosViewHolder>() {
+class VideosAdapter(private val listener: OnVideoClickListener): RecyclerView.Adapter<VideosViewHolder>() {
 
     var videos = mutableListOf<VideoEntity>()
 
@@ -19,6 +20,8 @@ class VideosAdapter: RecyclerView.Adapter<VideosViewHolder>() {
 
     override fun onBindViewHolder(holder: VideosViewHolder, position: Int) {
         holder.bind(videos[position])
+
+        holder.itemView.setOnClickListener { listener.onVideoClick(videos[position]) }
     }
 
 }

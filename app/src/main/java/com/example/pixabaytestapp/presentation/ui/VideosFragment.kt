@@ -6,9 +6,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.example.pixabaytestapp.R
 import com.example.pixabaytestapp.databinding.FragmentVideosBinding
 import com.example.pixabaytestapp.domain.models.VideoEntity
+import com.example.pixabaytestapp.presentation.OnVideoClickListener
 import com.example.pixabaytestapp.presentation.viewmodels.VideosState
 import com.example.pixabaytestapp.presentation.viewmodels.VideosViewModel
 import com.example.pixabaytestapp.utils.ErrorType
@@ -17,10 +19,12 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class VideosFragment: Fragment() {
 
+    private var isClickAllowed = true
+
     private var _binding: FragmentVideosBinding? = null
     private val binding get() = _binding!!
 
-    private val adapter by lazy { VideosAdapter() }
+    private val adapter by lazy { VideosAdapter(createVideoListener()) }
 
     private val viewModel: VideosViewModel by viewModels()
 
@@ -39,7 +43,7 @@ class VideosFragment: Fragment() {
         binding.rvVideos.adapter = adapter
 
         binding.swipeRefresh.setOnRefreshListener {
-            viewModel.getVideos()
+                viewModel.getVideos()
         }
 
         viewModel.observeState().observe(viewLifecycleOwner) {
@@ -85,8 +89,23 @@ class VideosFragment: Fragment() {
             }
         }
 
+        binding.progressBar.visibility = View.GONE
         binding.rvVideos.visibility = View.GONE
         binding.tvErrorMessage.visibility = View.VISIBLE
+    }
+
+    private fun createVideoListener(): OnVideoClickListener {
+        return  OnVideoClickListener { video: VideoEntity ->
+            findNavController().navigate(
+                R.id.action_videosFragment_to_playerFragment,
+                PlayerFragment.createArgs(video)
+            )
+        }
+    }
+
+    companion object {
+        private const val VIDEO = "VIDEO"
+        private const val CLICK_DEBOUNCE_DELAY_MILLIS = 1000L
     }
 
 }
